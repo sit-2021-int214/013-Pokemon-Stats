@@ -8,12 +8,50 @@ Explore 2 dataset that given then finding descriptive statistics and summary res
 Code here
 ```
 
-2.) Descriptive statistics Statement
+Descriptive statistics Statement
 ```{R}
 Code here
 ```
 
-3.)
+2.) 
+```{R}
+Code here
+```
+
+Descriptive statistics Statement
+```{R}
+Code here
+```
+
+3.) 
+```{R}
+Code here
+```
+
+Descriptive statistics Statement
+```{R}
+Code here
+```
+
+4.) 
+```{R}
+Code here
+```
+
+Descriptive statistics Statement
+```{R}
+Code here
+```
+
+5.) 
+```{R}
+Code here
+```
+
+Descriptive statistics Statement
+```{R}
+Code here
+```
 
 
 ### Team: บะหมี่ต้องใส่ชาม
