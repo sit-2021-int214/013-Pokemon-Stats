@@ -42,7 +42,7 @@ Code here
 
 4.) หาความถี่ survey ของเพศแต่ละเพศ
 ```{R}
-factor(survey$Sex)
+summary(factor(survey$Sex))
 ```
 
 Descriptive statistics Statement
