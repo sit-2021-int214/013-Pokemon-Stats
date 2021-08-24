@@ -35,7 +35,7 @@ Code here
 
 4.) 
 ```{R}
-Code here
+table(survey$Sex)
 ```
 
 Descriptive statistics Statement
