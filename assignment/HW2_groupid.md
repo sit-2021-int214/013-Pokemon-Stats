@@ -13,7 +13,11 @@ mean(survey$Age)
 
 Descriptive statistics Statement
 ```{R}
-Code here
+เรียกใช้ library ของ MASS
+หา Min ของ Survey โดยการเขียน min(survey$Age)
+หา Max ของ Survey โดยการเขียน max(survey$Age)
+หา Mean ของ Survey โดยการเรียน mean(survey$Age)
+survey$Age เพื่อบอกว่าเราใช้ข้อมูลชุดไหนอยู่และตามด้วย $ เพื่อเรียก Colum ที่เราจะหา
 ```
 
 2.) 
