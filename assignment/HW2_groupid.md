@@ -3,7 +3,7 @@ Explore 2 dataset that given then finding descriptive statistics and summary res
 
 ### Answer
 
-1.) 
+1.) หาค่าเฉลี่ยของอายุใน survay table
 ```{R}
 Code here
 ```
