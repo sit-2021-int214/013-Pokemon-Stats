@@ -33,7 +33,7 @@ Descriptive statistics Statement
 Code here
 ```
 
-4.) 
+4.) หาความถี่ survey ของเพศแต่ละเพศ
 ```{R}
 table(survey$Sex)
 ```
