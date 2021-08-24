@@ -3,9 +3,12 @@ Explore 2 dataset that given then finding descriptive statistics and summary res
 
 ### Answer
 
-1.) หาค่าเฉลี่ยของอายุใน survey table
+1.) หาค่าเฉลี่ย,min,max ของอายุใน survey table
 ```{R}
-Code here
+library(MASS)
+min(survey$Age)
+max(survey$Age)
+mean(survey$Age)
 ```
 
 Descriptive statistics Statement
