@@ -22,7 +22,7 @@ survey$Age เพื่อบอกว่าเราใช้ข้อมูล
 
 2.) จงหาว่าค่าเฉลี่ยของความกว้างของมือด้านใดที่กว้างกว่ากัน ระหว่าง writing hand กับ non-writing hand
 ```{R}
-Code here
+
 ```
 
 Descriptive statistics Statement
@@ -30,14 +30,15 @@ Descriptive statistics Statement
 Code here
 ```
 
-3.) 
+3.) หา column ที่2 row ที่3 ของ survey table
 ```{R}
-Code here
+library(MASS)
+survey[2,4] #[1] Left,Levels: Left Right
 ```
 
 Descriptive statistics Statement
 ```{R}
-Code here
+ใช้ สูตร ชื่อตาราง[column,row] เพื่อเลือกตำแหน่งของข้อมูลที่เราต้องการได้
 ```
 
 4.) หาความถี่ survey ของเพศแต่ละเพศ
