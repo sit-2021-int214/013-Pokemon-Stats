@@ -20,7 +20,7 @@ Descriptive statistics Statement
 survey$Age เพื่อบอกว่าเราใช้ข้อมูลชุดไหนอยู่และตามด้วย $ เพื่อเรียก Colum ที่เราจะหา
 ```
 
-2.) 
+2.) จงหาว่าค่าเฉลี่ยของความกว้างของมือด้านใดที่กว้างกว่ากัน ระหว่าง writing hand กับ non-writing hand
 ```{R}
 Code here
 ```
@@ -50,7 +50,7 @@ Descriptive statistics Statement
 Code here
 ```
 
-5.) 
+5.) จงหาว่าค่าเฉลี่ยของน้ำหนักหัวใจของแมวเพศใดมีค่ามากกว่ากัน
 ```{R}
 Code here
 ```
