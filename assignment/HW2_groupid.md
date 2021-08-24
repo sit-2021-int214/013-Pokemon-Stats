@@ -3,7 +3,7 @@ Explore 2 dataset that given then finding descriptive statistics and summary res
 
 ### Answer
 
-1.) From survey, most students use left hand writing.
+1.) 
 ```{R}
 Code here
 ```
