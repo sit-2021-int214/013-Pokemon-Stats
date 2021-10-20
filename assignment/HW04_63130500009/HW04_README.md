@@ -120,5 +120,5 @@ Count of Sub.Category
 SuperStore_sales %>% ggplot(aes(Sub.Category))+geom_bar() 
 ```
 Result:
-![image](https://user-images.githubusercontent.com/72536629/138091407-55d5f313-b992-4a10-8402-190f24fb5a7d.png)
+![image](https://user-images.githubusercontent.com/72536629/138091861-de3365cf-44c8-4f78-9b9e-c6b52a462dfa.png)
 
