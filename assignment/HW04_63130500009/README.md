@@ -11,12 +11,12 @@ Superstore Sales Dataset(https://raw.githubusercontent.com/safesit23/INT214-Stat
 
 ## Define a question
 
-###1.Explore the dataset that you have select.
-###2.Transform data with dplyr and finding insight the data at least 6 issues. Show your code, result and summary in form of sentence/paragraphs.
-###3.Using ggplot2 to create 2 graphs and explain each graph.
-###4.In this part, you need to using command from tidyverse (e.g. lubridate, stringr, forcats) that not learned in class and explain this command how to used it. If you can't implement to this dataset, you can select one command and show example how to used it.
-###5.Do in Markdown File (md or Rmd) and push into your folder in Team Repository. (Same as Workshop I)
-###6.Copy link to access this folder and paste into PDF file Part A
+### 1.Explore the dataset that you have select.
+### 2.Transform data with dplyr and finding insight the data at least 6 issues. Show your code, result and summary in form of sentence/paragraphs.
+### 3.Using ggplot2 to create 2 graphs and explain each graph.
+### 4.In this part, you need to using command from tidyverse (e.g. lubridate, stringr, forcats) that not learned in class and explain this command how to used it. If you can't implement to this dataset, you can select one command and show example how to used it.
+### 5.Do in Markdown File (md or Rmd) and push into your folder in Team Repository. (Same as Workshop I)
+### 6.Copy link to access this folder and paste into PDF file Part A
 
 
 ## Step 0: Loading library and dataset
