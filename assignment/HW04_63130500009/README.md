@@ -119,7 +119,6 @@ Count of Sub.Category
 ```
 SuperStore_sales %>% ggplot(aes(Sub.Category))+geom_bar() 
 ```
-Result:
 ![image](https://user-images.githubusercontent.com/72536629/138098368-9c0dd1e0-8f01-496d-bb4b-92e59034095a.png)
 
 เป็นการาฟที่แสดงให้เห็นว่า sub.category มี Binders มากที่สุด
@@ -129,8 +128,36 @@ Count of Region
 ```
 SuperStore_sales %>% ggplot(aes(Region))+geom_bar() 
 ```
-Result:
 ![image](https://user-images.githubusercontent.com/72536629/138098443-f65f0136-37e0-4aaf-858e-9f3b9fa7409d.png)
 
 
 เป็นการาฟที่แสดงให้เห็นว่าลูกค้าสั่งซื้อจากฝั่ง West มากที่สุด
+
+## Step 4: using command from tidyverse(forcats)
+forcats เป็นเครื่องมือที่คอยช่วยให้เราจัดการปัญหาลำดับของข้อมูลต่างๆได้อย่างดี เช่น
+### 4.1 สร้างชุดข้อมูลขึ้นมาก่อน
+```
+Cats <-    tribble(
+  ~ColorCats, ~number, ~age,
+  "Red",       2,  2,
+  "Green",     10, 3,
+  "Blue",       5, 2,
+  "White",      1, 7,
+  "Orange",     7, 5
+)
+```
+### 4.2 สร้าง factor จาก Rows ที่มีข้อมูลเป็น Char
+```
+Cats$ColorCats <- factor(Cats$ColorCats)
+```
+### 4.3 fct_reorder เป็นหนึงในคำสั่งของ forcats ที่ช่วยในการนับและเรียงข้อมูลได้
+```
+fct_reorder(Cats$ColorCats,Cats$number,min)
+```
+Resutl
+```
+[1] Red    Green  Blue   White  Orange
+Levels: White Red Blue Orange Green
+```
+
+
