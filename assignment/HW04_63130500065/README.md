@@ -188,6 +188,7 @@ ggplot(cs270, aes(Rating, fill = cs270$Type)) + geom_histogram(binwidth = 0.05) 
 Result:
 
 ![Graph 1](Rplot.png)
+
 แสดงจำนวนของแต่ละ Rating
 
 ### 2. หา relation ระหว่าง rating กับ price
@@ -197,4 +198,5 @@ ggplot(cs270 ,aes(Price, Rating)) + geom_point()+  ggtitle("Count of rating")
 Result:
 
 ![Graph 2](Rplot02.png)
+
 แสดง relation ระหว่าง rating กับ price
