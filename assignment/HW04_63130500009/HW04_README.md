@@ -86,7 +86,33 @@ Result:
 3   South 1598
 4    West 3140
 ```
-
+### 2.2
+ค่าเฉลี่ยต่างๆของแต่ละ Row (ส่วนมากที Row เป็น Char จึงดูข้อมูลพวก avg,max,min ได้ไม่ค่อยเยอะ)
+```
+SuperStore_sales %>% summary()
+```
+### 2.4
+ข้อมูลชุดนี้มีลูกค้าอยู่หลายเมือง แต่มีลูกค้าแต่เพียงประเทศเดียว
+```
+SuperStore_sales %>% distinct(City)
+SuperStore_sales %>% distinct(Country)
+```
+### 2.5
+ข้อมูลชุดนี้เป็นข้อมูลที่ไม่กระจายตัวมาก
+```
+SuperStore_sales %>% arrange(desc(Sales)) %>% select(Row.ID,Sales) 
+```
+### 2.6
+ข้อมูลชุดนี้มี Segment อยู่ 3 ที่ โดยส่วนมาก อยู่ที่ Consumer
+```
+SuperStore_sales %>% count(Segment) 
+```
+Result:
+```
+1    Consumer 5101
+2   Corporate 2953
+3 Home Office 1746
+```
 ## Step 2: xxxxxx
 
 ### 2.1. xxxxx
