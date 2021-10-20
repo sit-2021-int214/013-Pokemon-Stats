@@ -25,7 +25,7 @@ cs270 <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics
 มีจำนวน 271 observations และ 7 variables
 
 ## Part 2: Learning function from Tidyverse
-- Function `str_detect()` from package [stringr](https://www.rdocumentation.org/packages/stringr/versions/1.4.0). หาว่ามีตัวไหนบ้างที่ตรงกับ Pattern
+- Function `str_detect()` from package [stringr](https://www.rdocumentation.org/packages/stringr/versions/1.4.0)) หาว่ามีตัวไหนบ้างที่ตรงกับ Pattern
 ```
 str_detect(x, pattern)
 ```
@@ -114,7 +114,7 @@ Boxed Set - Hardcover                 ebook             Hardcover        Kindle 
                     
 ```
 
-### 3.6 command from tidyverse (stringr): Function ``str_subset()`` หาว่ามีหนังสือเล่มไหนที่มีคำว่า ``Programming``
+### หาว่ามีหนังสือเล่มไหนที่มีคำว่า `Programming`
 ```
 str_subset(cs270$Book_title, "Programming")
 ```
@@ -186,6 +186,7 @@ Result
 ggplot(cs270, aes(Rating, fill = cs270$Type)) + geom_histogram(binwidth = 0.05) + ggtitle("Count of rating")
 ```
 Result:
+
 ![Graph 1](Rplot.png)
 แสดงจำนวนของแต่ละ Rating
 
@@ -194,5 +195,6 @@ Result:
 ggplot(cs270 ,aes(Price, Rating)) + geom_point()+  ggtitle("Count of rating")
 ```
 Result:
+
 ![Graph 2](Rplot02.png)
 แสดง relation ระหว่าง rating กับ price
