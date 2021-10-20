@@ -60,12 +60,32 @@ $ Sub.Category  <chr> "Bookcases", "Chairs", "Labels", "Tables",~
 $ Product.Name  <chr> "Bush Somerset Collection Bookcase", "Hon ~
 $ Sales         <dbl> 261.9600, 731.9400, 14.6200, 957.5775, 22.~
 ```
+โดยข้อมูลชุดนี้มี Row อยู่ 9 Row 18 Column ข้อมูลส่วนมากเป็น Char โดยเป็นข้อมูลที่เก็บ Order และ Info ของลูกค้า
 
-
-//Explain
-
-- list 1
-- list 2
+## Step 2: Transform data with dplyr and finding insight the data at least 6 issues. Show your code, result and summary in form of sentence/paragraphs.
+### 2.1
+ข้อมูลชุดนี้เกิดการ Order อยู่ในช่วงปี 2015-2019
+```
+SuperStore_sales %>% filter(between(format(as.Date(Order.Date,format = "%d/%m/%Y"),"%Y"),2015,2019))
+```
+### 2.2
+ค่าเฉลี่ยต่างๆของแต่ละ Row (ส่วนมากที Row เป็น Char จึงดูข้อมูลพวก avg,max,min ได้ไม่ค่อยเยอะ)
+```
+SuperStore_sales %>% summary()
+```
+### 2.3
+ข้อมูลชุดนี้มีการ Order จากทาง West มากที่สุด
+```
+SuperStore_sales %>% count(Region)
+```
+Result:
+```
+   Region    n
+1 Central 2277
+2    East 2785
+3   South 1598
+4    West 3140
+```
 
 ## Step 2: xxxxxx
 
