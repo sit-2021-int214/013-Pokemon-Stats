@@ -122,3 +122,15 @@ SuperStore_sales %>% ggplot(aes(Sub.Category))+geom_bar()
 Result:
 ![image](https://user-images.githubusercontent.com/72536629/138091861-de3365cf-44c8-4f78-9b9e-c6b52a462dfa.png)
 
+เป็นการาฟที่แสดงให้เห็นว่า sub.category มี Binders มากที่สุด
+
+### 3.2 
+Count of Region
+```
+SuperStore_sales %>% ggplot(aes(Region))+geom_bar() 
+```
+Result:
+![RegionBar](https://user-images.githubusercontent.com/72536629/138097966-0938cf47-b458-46de-a2df-835950a5570e.PNG)
+
+
+เป็นการาฟที่แสดงให้เห็นว่า sub.category มี Binders มากที่สุด
