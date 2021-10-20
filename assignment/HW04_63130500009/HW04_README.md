@@ -5,14 +5,11 @@ Superstore Sales Dataset(https://raw.githubusercontent.com/safesit23/INT214-Stat
 **Created by Name-Surname (ID: 63130500009)**
 
 ### My Step
-1. Define a question
-2. Loading Library and dataset
-3. Check table
+1. Loading Library and dataset
+2. Check table
+3. Define a question
 
 ## Step 1: xxxxxx
-
-
-
 ```
 library(dplyr)
 library(readr)      
