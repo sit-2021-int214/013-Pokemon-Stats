@@ -1,13 +1,28 @@
-# Workshop 01 EDA: SAT Scores dataset
+# Assignment 4 (Individual 5%): Data Visualization
 
-Dataset from [SAT_original.csv](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/SAT_original.csv)
+Superstore Sales Dataset(https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv)
 
-**Created by Name-Surname (ID: xxxxxxxxxx)**
+**Created by Name-Surname (ID: 63130500009)**
 
 ### My Step
 1. Define a question
 2. Loading Library and dataset
-3. xxxxxxx
+3. Check table
+
+## Step 1: xxxxxx
+
+
+
+```
+library(dplyr)
+library(readr)      
+library(ggplot2)
+
+SuperStore_sales <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv")
+SuperStore_sales %>% glimpse();
+```
+
+
 
 ## Define a question
 
