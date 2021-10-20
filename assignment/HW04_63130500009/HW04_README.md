@@ -9,7 +9,7 @@ Superstore Sales Dataset(https://raw.githubusercontent.com/safesit23/INT214-Stat
 2. Check table
 3. Define a question
 
-## Step 1: xxxxxx
+## Step 1 and Step2
 ```
 library(dplyr)
 library(readr)      
