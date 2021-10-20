@@ -1,12 +1,17 @@
-# Assignment 4: Data Visualization
+# R-Assignment 4
 
-Created by Narawich ษampusa (ID: 63130500065)
-Choosen Dataset: Top 270 Computer Science(https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
+**Created by Narawich Kampusa (ID: 63130500065)**
 
+Choose Dataset:
+1. Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
 
-## Part A: Finding Insight the data in R
+### Outlines
+1. Explore the dataset
+2. Learning function from Tidyverse
+3. Transform data with dplyr and finding insight the data
+4. Visualization with GGplot2
 
-### Step 1: Explore the dataset that you have select.
+## Part 1: Explore the dataset
 
 ```
 # Library
@@ -17,9 +22,17 @@ library(ggplot2)
 # Dataset
 cs270 <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 ```
+มีจำนวน 271 observations และ 7 variables
 
-## Step 2: Transform data with dplyr and finding insight the data at least 6 issues.
-### 2.1 หาจำนวน dataset
+## Part 2: Learning function from Tidyverse
+- Function `str_detect()` from package [stringr](https://www.rdocumentation.org/packages/stringr/versions/1.4.0). หาว่ามีตัวไหนบ้างที่ตรงกับ Pattern
+```
+str_detect(x, pattern)
+```
+** สามารถใส่ dataset และ pattern เพื่อดูว่ามีค่าไหนบ้างที่ตรงกับ pattern ที่ใส่ โดยจะ return เป็น `True, False`
+
+## Part 3: Transform data with dplyr and finding insight the data
+### 3.1 หาว่า datatype ไหนไม่เหมาะสม
 ```
 cs270 %>% glimpse()
 ```
@@ -35,9 +48,9 @@ $ Number_Of_Pages <int> 105, 527, 50, 393, 305, 288, 256, 368, 259, 128, 352, 35
 $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover", "Kindle Edition", "Paperback", …
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 1…
 ```
-มีจำนวน 271 observations และ 7 variables
+Reviews ควรจะเป็น Interger
 
-### 2.2 หาค่าเฉลี่ย Rating ของแต่ละประเภทของหนังสือ
+### 3.2 หาค่าเฉลี่ย Rating ของแต่ละประเภทของหนังสือ
 ```
 cs270 %>% group_by(Type) %>% select(Rating) %>% summarise(avg = mean(Rating, na.rm = TRUE)) %>% arrange(desc(avg))
 ```
@@ -53,7 +66,7 @@ Result
 6 Unknown Binding        3.99
 ```
 
-### 2.3 หาหนังสือที่มีราคาสูงสุดและต่ำสุด
+### 3.3 หาหนังสือที่มีราคาสูงสุดและต่ำสุด
 ```
 cs270 %>% group_by(Book_title) %>% select(Price) %>% summarise(max_price = max(Price))%>% arrange(desc(max_price)) %>% head(1)
 cs270 %>% group_by(Book_title) %>% select(Price) %>% summarise(min_price = min(Price))%>% arrange((min_price)) %>% head(1)
@@ -73,7 +86,7 @@ Result
 1 The Elements of Style      9.32
 ```
 
-### 2.4 หาค่า max, min, avg ของ Rating
+### 3.4 หาค่า max, min, avg ของ Rating
 ```
 cs270$Rating %>% mean()
 cs270$Rating %>% max()
@@ -89,7 +102,7 @@ Result
 [1] 3
 ```
 
-### 2.5 หาจำนวนประเภทของหนังสือ
+### 3.5 หาจำนวนประเภทของหนังสือ
 ```
 cs270 %>% select(Type) %>% table()
 ```
@@ -101,7 +114,7 @@ Boxed Set - Hardcover                 ebook             Hardcover        Kindle 
                     
 ```
 
-### 2.6 command from tidyverse (stringr): Function `str_subset()` หาว่ามีหนังสือเล่มไหนที่มีคำว่า `Programming`
+### 3.6 command from tidyverse (stringr): Function ``str_subset()`` หาว่ามีหนังสือเล่มไหนที่มีคำว่า ``Programming``
 ```
 str_subset(cs270$Book_title, "Programming")
 ```
@@ -167,13 +180,19 @@ Result
 [57] "The Art of Computer Programming, Volumes 1-4a Boxed Set" 
 ```
 
-## Step B : Using ggplot2 to create 2 graphs and explain each graph.
+## Part 4: Visualization with GGplot2
 ### 1. หา Count of rating
 ```
 ggplot(cs270, aes(Rating, fill = cs270$Type)) + geom_histogram(binwidth = 0.05) + ggtitle("Count of rating")
 ```
-Result
-
+Result:
+![Graph 1](Rplot.png)
 แสดงจำนวนของแต่ละ Rating
 
-### 2. หา
+### 2. หา relation ระหว่าง rating กับ price
+```
+ggplot(cs270 ,aes(Price, Rating)) + geom_point()+  ggtitle("Count of rating")
+```
+Result:
+![Graph 2](Rplot02.png)
+แสดง relation ระหว่าง rating กับ price
