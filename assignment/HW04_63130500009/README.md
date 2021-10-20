@@ -120,7 +120,7 @@ Count of Sub.Category
 SuperStore_sales %>% ggplot(aes(Sub.Category))+geom_bar() 
 ```
 Result:
-![image](https://user-images.githubusercontent.com/72536629/138091861-de3365cf-44c8-4f78-9b9e-c6b52a462dfa.png)
+![image](https://user-images.githubusercontent.com/72536629/138098368-9c0dd1e0-8f01-496d-bb4b-92e59034095a.png)
 
 เป็นการาฟที่แสดงให้เห็นว่า sub.category มี Binders มากที่สุด
 
@@ -130,7 +130,7 @@ Count of Region
 SuperStore_sales %>% ggplot(aes(Region))+geom_bar() 
 ```
 Result:
-![RegionBar](https://user-images.githubusercontent.com/72536629/138097966-0938cf47-b458-46de-a2df-835950a5570e.PNG)
+![image](https://user-images.githubusercontent.com/72536629/138098443-f65f0136-37e0-4aaf-858e-9f3b9fa7409d.png)
 
 
-เป็นการาฟที่แสดงให้เห็นว่า sub.category มี Binders มากที่สุด
+เป็นการาฟที่แสดงให้เห็นว่าลูกค้าสั่งซื้อจากฝั่ง West มากที่สุด
