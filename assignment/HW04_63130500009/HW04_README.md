@@ -113,13 +113,12 @@ Result:
 2   Corporate 2953
 3 Home Office 1746
 ```
-## Step 2: xxxxxx
+## Step 3: Using ggplot2 to create 2 graphs and explain each graph
+### 3.1 
+Count of Sub.Category
+```
+SuperStore_sales %>% ggplot(aes(Sub.Category))+geom_bar() 
+```
+Result:
+![image](https://user-images.githubusercontent.com/72536629/138091407-55d5f313-b992-4a10-8402-190f24fb5a7d.png)
 
-### 2.1. xxxxx
-//Content
-
-### 2.2. xxxx
-//Content
-
-## Summary
-//Content
