@@ -181,7 +181,7 @@ Result
 ```
 
 ## Part 4: Visualization with GGplot2
-### 1. หา Count of rating
+### 1.) Graph show Count of Rating
 ```
 ggplot(cs270, aes(Rating, fill = cs270$Type)) + geom_histogram(binwidth = 0.05) + ggtitle("Count of rating")
 ```
@@ -191,7 +191,7 @@ Result:
 
 แสดงจำนวนของแต่ละ Rating
 
-### 2. หา relation ระหว่าง rating กับ price
+### 2.) Graph show relation between Price and Rating
 ```
 ggplot(cs270 ,aes(Price, Rating)) + geom_point()+  ggtitle("Count of rating")
 ```
