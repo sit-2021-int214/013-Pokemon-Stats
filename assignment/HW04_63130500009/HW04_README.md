@@ -38,6 +38,7 @@ Use glimps() for look row and type of data
 SuperStore_sales %>% glimpse();
 ```
 Result:
+```
 Rows: 9,800
 Columns: 18
 $ Row.ID        <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,~
