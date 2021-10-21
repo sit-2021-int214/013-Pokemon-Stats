@@ -114,7 +114,7 @@ Boxed Set - Hardcover                 ebook             Hardcover        Kindle 
                     
 ```
 
-### หาว่ามีหนังสือเล่มไหนที่มีคำว่า `Programming`
+### 3.6 หาว่ามีหนังสือเล่มไหนที่มีคำว่า `Programming`
 ```
 str_subset(cs270$Book_title, "Programming")
 ```
