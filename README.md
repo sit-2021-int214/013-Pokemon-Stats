@@ -1,20 +1,25 @@
 # 013-Pokemon Stats
 Datasets from: [pokemon.csv](https://www.kaggle.com/shubhamchambhare/pokemons-and-there-stats?select=pokemon.csv)
 
-## Objective
+### About's Products Datasets
+This data set includes 1045 Pokemons, including their number, name, and basic stats: HP, Attack, Defense, Special Attack, Special Defense, and Speed. It has been of great use when teaching statistics to kids.
+
+## Overview
+Pokemon Stat นั้นเป็นการรวบรวมเอาค่าสถิติพลัง และคะแนนด้านต่างๆของเหล่าตัวละครจากเกม Pokemon มาไว้ด้วยกัน เพื่อเป็นแหล่งข้อมูลในการเปรียบเทียบระดับความสามารถของตัวละครแต่ละตัว ซึ่งโดยทั่วไปแล้วจะสามารถนำมาใช้ประโยชน์ต่อการเล่นเกม Pokemon และสำหรับคนทั่วไปที่ชอบการ์ตูน Pokemon และต้องการศึกษาพลังของแต่ละตัวละคร ด้วยเหตุผลเหล่านี้กลุ่มของเราจึงอยากศึกษาว่า Pokemon ตัวไหนมีพลังโจมตีที่มากที่สุด, Pokemon ตัวไหนแข็งแกร่งมากที่สุด และนำข้อมูลจากที่ได้มาต่อยอดด้านเกม และการ์ตูน
 
 ## Process
 0. Import datasets and libraries.
 1. Define a question
-2. Data Cleaning
-3. List a film that is a episode
-4. Find average rumtime of movie
-5. Find a movies that is directed by Anthony Russo and Joe Russo
-6. Find total, max, min, average of metascore.
-7. Find total, max, min, average of imdb_vote.
-8. Find total, max, min, average of imdb rating.
-9. List a film that is rated at PG-13.
-10. List a film that has runtime greater than 140 minutes.
+2. Data Cleaning 
+----------Question Topic----------
+3. หาค่าเฉลี่ยของ Attack
+4. หาค่าพลังสูงสุดของ Special_Attack กับ Special_Defence ว่าใครมีพลังที่เหนือกว่ากัน
+5. แสดงจำนวน ROWS ที่มีค่า Special_Attack มากกว่า 100 โดยให้ List ข้อมูลมาแค่ Name และ Special_Attack
+6. หาค่า Mean Max Min Q3 จาก Colums Total
+7. 25 อันดับสุดท้ายของตัวที่มี HP ต่ำที่สุดตัวไหนบ้างที่มีค่า Attack + Special_Attack มากกว่าค่า HP ของ Top 25 max HP
+8. หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด มีตัวใดบ้างที่มีค่า Special_defence ต่ำกว่าค่าเฉลี่ย
+9. หาตัวละครที่มี Speed สูงที่สุด จากบรรดาตัวละครที่มีค่าพลังโจมตีสูงกว่าค่าเฉลี่ย
+10. หาว่าค่า max of Attack สูงกว่าค่า average Speed เท่าไหร่
 
 ## Our Steps
 
@@ -75,6 +80,8 @@ names(data)[6] <- "Special_attack"
 names(data)[7] <- "Special_defence"
 ```
 
+## Question Topic
+
 ## 3. หาค่าเฉลี่ยของ Attack
 
 ใช้ data แล้วตามด้วย $ เพื่อหา Colums ใน data ทำการเลือก attack และใส่ function mean() เพื่อหาค่าเฉลี่ยของ Attack ใน 
@@ -90,7 +97,7 @@ Result :
 
 ค่าเฉลี่ยของ Attack คือ 194
 
-## 4. หาค่าพลังสูงสุดของ Special_Attack กับ Special_Defence ว่าใครมีพลังที่เหมืนอกว่ากัน
+## 4. หาค่าพลังสูงสุดของ Special_Attack กับ Special_Defence ว่าใครมีพลังที่เหนือกว่ากัน
 
 หา maxSpecialATK โดยการ นำ data ใส่ $ แล้วใส่ Colums ที่อยากจะหาในที่นี้เราต้องการรู้ค่า Max ของ Special_Attackและใส่ function Max เพื่อหาค่ามากที่สุด
 ```
@@ -111,9 +118,9 @@ Result :
 ```
 -36
 ```
-แสดงว่า maxSpecialDEF เป็นฝ่ายชนะเพราะได้ค่าติดลบ
+แสดงว่า maxSpecialDEF เป็นฝ่ายชนะเพราะได้ค่าติดลบ (ค่า max Special_Attack น้อยกว่า max ค่า Special_Defence)
 
-## 5. แสดงจำนวน ROWS ที่มี Special_Attack ที่มีมากกว่า 100 โดยให้ List ข้อมูลมาแค่ Name และ Special_Attack
+## 5. แสดงจำนวน ROWS ที่มีค่า Special_Attack มากกว่า 100 โดยให้ List ข้อมูลมาแค่ Name และ Special_Attack
 ใช้ filter เพื่อเอา Special_Attack ที่มากกว่า 100 เข้ามาแล้วทำการ select คือการเลือกว่าเราอยากได้ข้อมูลชุดไหนบ้าง จากนั้นเลือก Name และ Special_Attack เพื่อทำการ list colums เฉพาะ name และ special_attack
 
 ```
@@ -122,7 +129,7 @@ data %>% select(Name,Special_attack)  %>% filter(Special_attack > 100)
 
 Result :  
 ```
-183 ROWS
+183 ROWS (ตารางที่แสดงผลออกมามีข้อมูลจำนวนมาก และยาวเกินไป จึงย่อคำตอบในนี้ให้ระบุแค่จำนวน ROW)
 ```
 
 มีจำนวน ROWS ที่ Special_Attack มากกว่า 100 อยู่ 183 ROWS
@@ -177,9 +184,9 @@ Result :
 
 ได้ค่า Total Q3 คือ 515
 
-## 7. Lowest 25 อันดับของตัวที่มี HP ต่ำที่สุดตัวไหนบ้างที่มีค่า atk + sp atk มากกว่าค่า HP ของ Top 25 max XP
+## 7. 25 อันดับสุดท้ายของตัวที่มี HP ต่ำที่สุดตัวไหนบ้างที่มีค่า Attack + Special_Attack มากกว่าค่า HP ของ Top 25 max HP
 
-### 7.1 สร้างคอลัมน์ all atk (atk+sp atk) โดยเรียงตามลำดับจาก 25 ลำดับที่ hp น้อยที่สุด
+### 7.1 สร้างคอลัมน์ Allatk (Attack + Special_Attack) โดยเรียงตามลำดับจาก 25 ลำดับที่ HP น้อยที่สุด
 ```
 data %>% arrange(HP) %>% head(25) %>% mutate(Allatk = Attack+Special_attack) %>% select(Name,HP,Allatk) %>%glimpse()
 ```
@@ -193,7 +200,7 @@ $ HP     <int> 10, 10, 20, 20, 20, 20, 20, 20, 25, 25, 25, 25, 28, 28, 30, 30, 3
 $ Allatk <int> 90, 90, 25, 75, 20, 25, 70, 95, 125, 130, 55, 45, 70, 100, 81, 81, 110, 135, 130, 110, 115, 135, 60, 90, 80
 ```
 
-### 7.2 ลิลต์ลำดับของ hp สูงที่สุด 25 ลำดับ (อันดับที่ 25 ของ top 25 max hp คือ hp =126)
+### 7.2 ลิลต์ลำดับของ HP สูงที่สุด 25 ลำดับ (อันดับที่ 25 ของ top 25 max HP คือ HP = 126)
 
 
 ```
@@ -208,7 +215,7 @@ $ Name <chr> "Blissey", "Chansey", "Guzzlord", "Mega Zygarde X", "Regidrago", "W
 $ HP   <int> 255, 250, 223, 216, 200, 190, 170, 165, 160, 150, 150, 150, 150, 144, 140, 140, 137, 137, 135, 135, 130, 130, 130, 126, 126
 ```
 
-### 7.3 ดังนั้นเลยเพิ่ม filter all atk > 126 เพื่อหาตัวที่ มี all atk มากกว่า
+### 7.3 ดังนั้นเลยเพิ่ม filter Allatk > 126 เพื่อหาตัวที่ มี all atk มากกว่า
 ```
 data %>% arrange(HP) %>% head(25) %>% mutate(Allatk = Attack+Special_attack) %>% select(Name,HP,Allatk) %>%  filter(Allatk > 126) %>% glimpse()
 ```
@@ -222,7 +229,9 @@ $ HP     <int> 25, 30, 30, 30
 $ Allatk <int> 130, 135, 130, 135
 ```
 
-## 8. หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด มีตัวใดบ้างที่มีค่า Special_defence ต่ำกว่าค่าเฉลี่ย เเละต่ำกว่าเท่าไหร่
+ใน 25 อันดับสุดท้ายของตัวที่มี HP ต่ำที่สุด จะมี Magnemite, Gastly, Krabby และ Kabuto ที่มีค่า Attack + Special_Attack มากกว่าค่า HP ของตัวละคร Top 25 max HP
+
+## 8. หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด มีตัวใดบ้างที่มีค่า Special_defence ต่ำกว่าค่าเฉลี่ย
 
 ### 8.1 หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด
 ```
@@ -257,9 +266,9 @@ Result:
 4      Deoxys
 5 Mega Deoxys
 ```
-ได้เป็น Regieleki, Ninjask, Pheromosa, Deoxys, Mega Deoxys
+ได้เป็นตัวละคร Regieleki, Ninjask, Pheromosa, Deoxys, Mega Deoxys
 
-## 9. หาตัวละครที่มีสปีดสูงที่สุด จากบรรดาตัวละครที่มีค่าพลังโจมตีสูงกว่าค่าเฉลี่ย
+## 9. หาตัวละครที่มี Speed สูงที่สุด จากบรรดาตัวละครที่มีค่าพลังโจมตีสูงกว่าค่าเฉลี่ย
 
 ### 9.1 filter หาตัวที่มี speed มากกว่าค่าเฉลี่ยของพลังโจมตีแล้วเรียงค่า speed จากมากไปน้อย โดยแสดงแค่ตัวแรก
 ```
@@ -271,9 +280,9 @@ Result:
        Name
 1 Regieleki
 ```
-ได้เป็นตัว Regieleki
+ได้เป็นตัว Regieleki มี Speed สูงที่สุด
 
-## 10. find max of atk สูงกว่า average speed เท่าไหร่
+## 10. หาว่าค่า max of Attack สูงกว่าค่า average Speed เท่าไหร่
 
 ### 10.1 หาค่า max() ของ Attack
 ```
@@ -302,10 +311,33 @@ Result:
 > max(data$Attack) - mean(data$Speed)
 [1] 121.2234
 ```
-ได้คำตอบว่า 121.2234
+ได้คำตอบว่าสูงกว่า 121.2234
+
+### Tools
+
+- R Language
+- R Studio Desktop
+
+## Table of Contents
+
+1. [Exploratory Data Analysis](./) ปัจจุบันอยู่ในหน้าแรกของ  README.md
+2. [Data Visualization](./)
+
+## Resources
+
+### Important Files in Repository
+
+- [code_eda.R]() : Exploratory Data Analysis
+- [products_original.csv](./pokemon.csv): Original Dataset
+- [products_clean.csv](): Clean Dataset
+
+### References
+
+JATAWAT XIE >> [R command summary](https://github.com/safesit23/INT214-Statistics/blob/main/workshop/Summary.md)
 
 ## About Us
 งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+
 ### Team: บะหมี่ต้องใส่ชาม
 1. ชื่อ จักริน นามสกุล ไชยบุบผา    StudentID: 63130500009
 2. ชื่อ ชนันพร นามสกุล ผ่องศรี    StudentID: 63130500014
