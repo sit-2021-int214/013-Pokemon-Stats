@@ -82,7 +82,7 @@ names(data)[7] <- "Special_defence"
 ```
 maxSpecialATK <- data$Special_attack %>% max() 
 ```
-Reult :
+### Reult :
 
 ```
 194
@@ -90,23 +90,28 @@ Reult :
 
 ค่าเฉลี่ยของ Attack คือ 194
 
-## 4. โจทย์
+## 4. หาค่าพลังสูงสุดของ Special_Attack กับ Special_Defence ว่าใครมีพลังที่เหมืนอกว่ากัน
 
-### 4.1 //คำอธิบายว่า query ที่เขียนทำอะไรบ้าง.
+### หา maxSpecialATK โดยการ นำ data ใส่ $ แล้วใส่ Colums ที่อยากจะหาในที่นี้เราต้องการรู้ค่า Max ของ Special_Attackและใส่ function Max เพื่อหาค่ามากที่สุด
 ```
-r file
-```
-
-### 4.2 //คำอธิบายว่า query ที่เขียนทำอะไรบ้าง
-```
-r file
+maxSpecialATK <- data$Special_attack %>% max()
 ```
 
+### หา maxSpecialDEF เหมือนกับ maxSpecialATK โดยการนำ Colums Special_Defence ใส่ function Max เพื่อหาค่าสูงสุด
 ```
-result
+maxSpecialDEF <- data$Special_defence %>% max()
 ```
-
-//คำตอบ
+### นำ maxSpecialATK มาลบกับ maxSpecialDEF 
+ถ้าได้ค่าติดลบแสดงว่า maxSpecialDEF เป็นฝ่ายชนะ
+ถ้าได้ค่าบวกแสดงว่า maxSpecialATK เป็นฝ่ายชนะ
+```
+maxSpecialATK - maxSpecialDEF
+```
+### Result : 
+```
+-36
+```
+แสดงว่า maxSpecialDEF เป็นฝ่ายชนะเพราะได้ค่าติดลบ
 
 ## 5. 
 
