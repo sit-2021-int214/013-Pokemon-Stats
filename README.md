@@ -222,43 +222,87 @@ $ HP     <int> 25, 30, 30, 30
 $ Allatk <int> 130, 135, 130, 135
 ```
 
-## 8. 
+## 8. หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด มีตัวใดบ้างที่มีค่า sp defence ต่ำกว่าค่าเฉลี่ย เเละต่ำกว่าเท่าไหร่
 
-### 8.1 
+### 8.1 หาว่าในบรรดาตัวละคร top 10 ที่มีค่า Speed มากที่สุด
 ```
-
+data %>% arrange(desc(Speed)) %>% head(10)
 ```
-
+Result: 
 ```
+> data %>% arrange(desc(Speed)) %>% head(10)
+              Name Total  HP Attack Defence Special_attack Special_defence Speed
+1        Regieleki   580  80    100      50            100              50   200
+2    Mega Deoxys X   600  50     95      90             95              90   180
+3          Ninjask   456  61     90      45             50              50   160
+4        Pheromosa   570  71    137      37            137              37   151
+5    Mega Alakazam   600  55     50      65            175             105   150
+6        Electrode   490  60     50      70             80              80   150
+7  Mega Aerodactyl   615  80    135      85             70              95   150
+8           Deoxys   600  50    150      50            150              50   150
+9      Mega Deoxys   600  50    180      20            180              20   150
+10  Mega Calyrex X   680 100     85      80            165             100   150
 ```
-
-//คำตอบ
-
-## 9. 
-
-### 9.1 
+### 8.2 filter ตัวที่มีค่า Special_defence ต่ำกว่าค่าเฉลี่ย
 ```
-
+data %>% arrange(desc(Speed)) %>% head(10) %>% filter(Special_defence < mean(Special_defence)) %>% select(Name)
 ```
-
+Result:
 ```
-result
+> data %>% arrange(desc(Speed)) %>% head(10) %>% filter(Special_defence < mean(Special_defence)) %>% select(Name)
+         Name
+1   Regieleki
+2     Ninjask
+3   Pheromosa
+4      Deoxys
+5 Mega Deoxys
 ```
+ได้เป็น Regieleki, Ninjask, Pheromosa, Deoxys, Mega Deoxys
 
-//คำตอบ
+## 9. หาตัวละครที่มีสปีดสูงที่สุด จากบรรดาตัวละครที่มีค่าพลังโจมตีสูงกว่าค่าเฉลี่ย
 
-## 10. 
-
-### 10.1 
+### 9.1 filter หาตัวที่มี speed มากกว่าค่าเฉลี่ยของพลังโจมตีแล้วเรียงค่า speed จากมากไปน้อย โดยแสดงแค่ตัวแรก
 ```
-
+data %>% filter(Speed > mean(Attack)) %>% arrange(desc(Speed)) %>% head(1) %>% select(Name)
 ```
-
+Result:
 ```
-result
+> data %>% filter(Speed > mean(Attack)) %>% arrange(desc(Speed)) %>% head(1) %>% select(Name)
+       Name
+1 Regieleki
 ```
+ได้เป็นตัว Regieleki
 
-//คำตอบ
+## 10. find max of atk สูงกว่า average speed เท่าไหร่
+
+### 10.1 หาค่า max() ของ Attack
+```
+max(data$Attack)
+```
+Result:
+```
+> max(data$Attack)
+[1] 190
+```
+### 10.2 หาค่าเฉลี่ยของ speed
+```
+mean(data$Speed)
+```
+Result:
+```
+> mean(data$Speed)
+[1] 68.77661
+```
+### หาว่าต่างกันเท่าไหร่
+```
+max(data$Attack) - mean(data$Speed)
+```
+Result:
+```
+> max(data$Attack) - mean(data$Speed)
+[1] 121.2234
+```
+ได้คำตอบว่า 121.2234
 
 ## About Us
 งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
