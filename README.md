@@ -77,12 +77,12 @@ names(data)[7] <- "Special_defence"
 
 ## 3. หาค่าเฉลี่ยของ Attack
 
-### ใช้ data แล้วตามด้วย $ เพื่อหา Colums ใน data ทำการเลือก attack และใส่ function mean() เพื่อหาค่าเฉลี่ยของ Attack ใน 
+ใช้ data แล้วตามด้วย $ เพื่อหา Colums ใน data ทำการเลือก attack และใส่ function mean() เพื่อหาค่าเฉลี่ยของ Attack ใน 
 
 ```
 maxSpecialATK <- data$Special_attack %>% max() 
 ```
-### Reult :
+Result :
 
 ```
 194
@@ -92,113 +92,135 @@ maxSpecialATK <- data$Special_attack %>% max()
 
 ## 4. หาค่าพลังสูงสุดของ Special_Attack กับ Special_Defence ว่าใครมีพลังที่เหมืนอกว่ากัน
 
-### หา maxSpecialATK โดยการ นำ data ใส่ $ แล้วใส่ Colums ที่อยากจะหาในที่นี้เราต้องการรู้ค่า Max ของ Special_Attackและใส่ function Max เพื่อหาค่ามากที่สุด
+หา maxSpecialATK โดยการ นำ data ใส่ $ แล้วใส่ Colums ที่อยากจะหาในที่นี้เราต้องการรู้ค่า Max ของ Special_Attackและใส่ function Max เพื่อหาค่ามากที่สุด
 ```
 maxSpecialATK <- data$Special_attack %>% max()
 ```
 
-### หา maxSpecialDEF เหมือนกับ maxSpecialATK โดยการนำ Colums Special_Defence ใส่ function Max เพื่อหาค่าสูงสุด
+หา maxSpecialDEF เหมือนกับ maxSpecialATK โดยการนำ Colums Special_Defence ใส่ function Max เพื่อหาค่าสูงสุด
 ```
 maxSpecialDEF <- data$Special_defence %>% max()
 ```
-### นำ maxSpecialATK มาลบกับ maxSpecialDEF 
+นำ maxSpecialATK มาลบกับ maxSpecialDEF 
 ถ้าได้ค่าติดลบแสดงว่า maxSpecialDEF เป็นฝ่ายชนะ
 ถ้าได้ค่าบวกแสดงว่า maxSpecialATK เป็นฝ่ายชนะ
 ```
 maxSpecialATK - maxSpecialDEF
 ```
-### Result : 
+Result : 
 ```
 -36
 ```
 แสดงว่า maxSpecialDEF เป็นฝ่ายชนะเพราะได้ค่าติดลบ
 
-## 5. 
-
-### 5.1 
-```
+## 5. แสดงจำนวน ROWS ที่มี Special_Attack ที่มีมากกว่า 100 โดยให้ List ข้อมูลมาแค่ Name และ Special_Attack
+ใช้ filter เพื่อเอา Special_Attack ที่มากกว่า 100 เข้ามาแล้วทำการ select คือการเลือกว่าเราอยากได้ข้อมูลชุดไหนบ้าง จากนั้นเลือก Name และ Special_Attack เพื่อทำการ list colums เฉพาะ name และ special_attack
 
 ```
-
-### 
+data %>% select(Name,Special_attack)  %>% filter(Special_attack > 100)
 ```
 
+Result :  
+```
+183 ROWS
 ```
 
+มีจำนวน ROWS ที่ Special_Attack มากกว่า 100 อยู่ 183 ROWS
+
+## 6. หาค่า Mean Max Min Q3 จาก Colums Total
+
+### 6.1 หาค่า Mean
+โดยการใส่ function mean
 ```
-result
+data$Total %>% mean()
 ```
-
-//คำตอบ
-
-## 6. 
-
-### 6.1
+Result : 
 ```
-
-```
-
-```
-
+438.8523
 ```
 
-//คำตอบ
+ได้ค่าเฉลี่ย Total คือ 438.8523
 
-### 6.2 
+### 6.2 หาค่า Max
+โดยการใส่ function max
+```
+data$Total %>% max()
+```
+Result : 
+```
+780
 ```
 
+ได้ค่า Total สูงสุด คือ 780
+
+### 6.3 หาค่า Min
+โดยการใส่ function min
+```
+data$Total %>% min()
+```
+Result :
+```
+175
 ```
 
+ได้ค่า Total ต่ำสุด คือ 175
+
+### 6.4 หาค่า Q3
+โดยการใส่ function quantile() แล้วใน () ให้ใส่ค่า quantile ของเราอยากเช่น 0.75 คือ Q3
+```
+data$Total %>% quantile(0.75)
+```
+Result :
+```
+515
 ```
 
+ได้ค่า Total Q3 คือ 515
+
+## 7. Lowest 25 อันดับของตัวที่มี HP ต่ำที่สุดตัวไหนบ้างที่มีค่า atk + sp atk มากกว่าค่า HP ของ Top 25 max XP
+
+### 7.1 สร้างคอลัมน์ all atk (atk+sp atk) โดยเรียงตามลำดับจาก 25 ลำดับที่ hp น้อยที่สุด
+```
+data %>% arrange(HP) %>% head(25) %>% mutate(Allatk = Attack+Special_attack) %>% select(Name,HP,Allatk) %>%glimpse()
 ```
 
-//คำตอบ
-
-### 6.3 
+Result:
+```
+Rows: 25
+Columns: 3
+$ Name   <chr> "Diglett", "Mega Diglett", "Magikarp", "Pichu", "Shuckle", "Feebas", "Duskull", "Mime Jr.", "Abra", "Magnemite", "Wimpod"~
+$ HP     <int> 10, 10, 20, 20, 20, 20, 20, 20, 25, 25, 25, 25, 28, 28, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30
+$ Allatk <int> 90, 90, 25, 75, 20, 25, 70, 95, 125, 130, 55, 45, 70, 100, 81, 81, 110, 135, 130, 110, 115, 135, 60, 90, 80
 ```
 
-```
+### 7.2 ลิลต์ลำดับของ hp สูงที่สุด 25 ลำดับ (อันดับที่ 25 ของ top 25 max hp คือ hp =126)
+
 
 ```
-
+data %>% arrange(desc(HP)) %>% head(25) %>% select(Name,HP) %>% glimpse()
 ```
 
-//คำตอบ
-
-### 6.4 
+Result:
+```
+Rows: 25
+Columns: 2
+$ Name <chr> "Blissey", "Chansey", "Guzzlord", "Mega Zygarde X", "Regidrago", "Wobbuffet", "Wailord", "Alomomola", "Snorlax", "Slaking",~
+$ HP   <int> 255, 250, 223, 216, 200, 190, 170, 165, 160, 150, 150, 150, 150, 144, 140, 140, 137, 137, 135, 135, 130, 130, 130, 126, 126
 ```
 
+### 7.3 ดังนั้นเลยเพิ่ม filter all atk > 126 เพื่อหาตัวที่ มี all atk มากกว่า
+```
+data %>% arrange(HP) %>% head(25) %>% mutate(Allatk = Attack+Special_attack) %>% select(Name,HP,Allatk) %>%  filter(Allatk > 126) %>% glimpse()
 ```
 
+Result:
 ```
-
+Rows: 4
+Columns: 3
+$ Name   <chr> "Magnemite", "Gastly", "Krabby", "Kabuto"
+$ HP     <int> 25, 30, 30, 30
+$ Allatk <int> 130, 135, 130, 135
 ```
-
-//คำตอบ
-
-## 7. 
-
-### 7.1 
-```
-
-```
-
-```
-
-```
-
-//คำตอบ
-
-### 7.2 
-```
-
-```
-
-```
-
-```
-//คำตอบ
 
 ## 8. 
 
