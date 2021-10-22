@@ -49,30 +49,17 @@ library(stringr)
 
 ## 2. Data Cleaning 
 
-### 2.1 
+### 2.1 ทำการ Cleaning เลขโดดที่มากเกินและน้อยเกินไป
+```
+data <- data %>% filter(HP > 1)
+data <- data %>% filter(Total != 1125)
 ```
 
+### 2.2 ทำการ Rename Colums
 ```
-
-### 2.2 
+names(data)[6] <- "Special_attack" 
+names(data)[7] <- "Special_defence"
 ```
-
-```
-### 2.3 
-```
-
-```
-
-### 2.4 
-```
-
-```
-
-### 2.5 
-```
-
-```
-
 
 ## 3. โจทย์
 
