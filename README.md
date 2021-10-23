@@ -66,7 +66,7 @@ data <- data %>% filter(HP > 1)
 data <- data %>% filter(Total != 1125)
 ```
 
-### 2.2 ทำการ Rename Colums
+### 2.2 ทำการ Rename Colums เพื่อไม่เป็นการสับสนกับความหมายของ Colums นั้น ๆ
 ```
 names(data)[6] <- "Special_attack" 
 names(data)[7] <- "Special_defence"
