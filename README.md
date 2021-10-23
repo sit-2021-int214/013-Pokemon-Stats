@@ -325,16 +325,16 @@ Result:
 
 ## Table of Contents
 
-1. [Exploratory Data Analysis](./) ปัจจุบันอยู่ในหน้าแรกของ  README.md
-2. [Data Visualization](./)
+1. [Exploratory Data Analysis](./) ปัจจุบันอยู่ในหน้าแรกของ  README.md ไฟล์นี้
+2. [Data Visualization](./) เนื้อหาจะอยู่ในส่วนหลังกลางภาค
 
 ## Resources
 
 ### Important Files in Repository
 
-- [code_eda.R]() : Exploratory Data Analysis
+- [code_eda.R](./PokemonStats.R) : Exploratory Data Analysis
 - [products_original.csv](./pokemon.csv): Original Dataset
-- [products_clean.csv](): Clean Dataset
+- [products_clean.csv](./pokemon-stat-cleaning.csv): Clean Dataset
 
 ### References
 
