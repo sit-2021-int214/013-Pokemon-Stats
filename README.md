@@ -1,5 +1,6 @@
 # 013-Pokemon Stats
 Datasets from: [pokemon.csv](https://www.kaggle.com/shubhamchambhare/pokemons-and-there-stats?select=pokemon.csv)
+Datasets Cleaning from : [pokemonCleaning.csv](https://raw.githubusercontent.com/sit-2021-int214/013-Pokemon-Stats/main/pokemon-stat-cleaning.csv)
 
 ### About's Products Datasets
 This data set includes 1045 Pokemons, including their number, name, and basic stats: HP, Attack, Defense, Special Attack, Special Defense, and Speed. It has been of great use when teaching statistics to kids.
