@@ -51,14 +51,14 @@ prog_book %>% filter(Type == "Kindle Edition") %>%  filter(Reviews == max(Review
 
 ## prog_book Dataset - Bar Chart
 
-#Step 2-1: Save to object
+#Step 8-1: Save to object
 type_plot <- ggplot(prog_book,aes(x=Type)) + geom_bar()
 type_plot
 
-#Step 2-2: Adding component
+#Step 8-2: Adding component
 type_plot + ggtitle("Number of Programing Book Type") +
   xlab("Book Type") + ylab("Number of Books")
 
-#2-2: Example 2: Scatter Plot
+#Step 9: Scatter Plot
 
 prog_book %>% filter(Number_Of_Pages < 3000) %>% ggplot(aes(x=Number_Of_Pages,y=Price))+geom_point() + ggtitle("Relation between Number of Pages and Price")
