@@ -1,3 +1,4 @@
+##Explore Dataset
 #Library
 library(dplyr)
 library(assertive)
@@ -12,20 +13,22 @@ library(purrr)
 
 #Import Data
 prog_book <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
-
 View(prog_book)
+glimpse(prog_book)
 
-##Explore Dataset
+##Learning function from purrr
+# Compute normal distributions from an atomic vector
+1:2 %>% map(rnorm, n = 2)
+
+##Transform data with dplyr and finding insight the data
 #1.
 prog_book %>% filter(Rating > mean(Rating)) %>% select(Book_title) %>% arrange(Book_title)
-  
-#sort(prog_book$Book_title, decreasing = FALSE)
 
 #2.
 prog_book %>% filter(Type == "Hardcover" & Reviews > mean(Reviews)) %>% count()
 
 #3.
-bookT <- prog_book %>% select(Book_title,)
+bookT <- prog_book %>% select(Book_title)
 count_title <- data.frame(bookT %>% map(function(x) str_length(x)))
 count_title %>% filter(Book_title < 30) %>% count()
 
@@ -49,7 +52,7 @@ prog_book %>% filter(Type == "Kindle Edition") %>%  filter(Reviews == max(Review
 
 ##Create Graph
 
-## prog_book Dataset - Bar Chart
+#8.Bar Chart
 
 #Step 8-1: Save to object
 type_plot <- ggplot(prog_book,aes(x=Type)) + geom_bar()
@@ -59,6 +62,6 @@ type_plot
 type_plot + ggtitle("Number of Programing Book Type") +
   xlab("Book Type") + ylab("Number of Books")
 
-#Step 9: Scatter Plot
+#9.Scatter Plot
 
 prog_book %>% filter(Number_Of_Pages < 3000) %>% ggplot(aes(x=Number_Of_Pages,y=Price))+geom_point() + ggtitle("Relation between Number of Pages and Price")
