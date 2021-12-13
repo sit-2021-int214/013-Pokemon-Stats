@@ -14,7 +14,7 @@ library("readr")
 data <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/013-Pokemon-Stats/main/
 ```
 
-## Step 1: สุ่มกลุ่มตัวอย่าง
+## Step 1: Data Sample
 ```
 data_sample <- data %>% sample_n(100)
 ```
