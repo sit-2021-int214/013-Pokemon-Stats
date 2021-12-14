@@ -11,7 +11,7 @@ Total ของโปเกม่อนทั้งหมดมีค่าเ�
 library("dplyr")
 library("readr")
 
-data <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/013-Pokemon-Stats/main/
+data <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/013-Pokemon-Stats/main/pokemon-stat-cleaning.csv")
 ```
 
 ## Step 1: Data Sample
