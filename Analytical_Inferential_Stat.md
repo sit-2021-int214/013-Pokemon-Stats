@@ -1,6 +1,10 @@
-### Hypothesis Testing
-##Total ของโปเกม่อนทั้งหมดมีค่าเฉลี่ยอยู่ที่ H0 ถ้าเราสุ่มตัวอย่างโปเกมอนมา 100 ตัว ค่าเฉลี่ยของโปเกมอนจะยังใกล้เคียงกับค่าเฉลี่ยดั้งเดิม ค่าความเชื่อมั่นคือ 95 เปอร
-
+# Hypothesis Testing
+## Question
+```
+Total ของโปเกม่อนทั้งหมดมีค่าเฉลี่ยของ Total อยู่ใกล้เคียงกัน ถ้าเราสุ่มตัวอย่างโปเกมอนมา 100 ตัว 
+ค่าเฉลี่ยของโปเกมอนจะยังใกล้เคียงกับค่าเฉลี่ยดั้งเดิม 
+ค่าความเชื่อมั่นคือ 95 เปอร์เซ็นต์
+```
 
 ## Step 0: Install Library && Import CSV
 ```
@@ -10,25 +14,25 @@ library("readr")
 data <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/013-Pokemon-Stats/main/
 ```
 
-## Step 1: สุ่มกลุ่มตัวอย่าง
+## Step 1: Data Sample
 ```
 data_sample <- data %>% sample_n(100)
 ```
 
 ## Step 2: Find Point Estimation
 ```
-n <- 100
+n <- 100 
 alpha <- 0.05
-mean <- mean(data_sample$Total)
-sd <- sd(data_sample$Total)
-mue0 <- mean(data$Total)
+mean <- mean(data_sample$Total) ## 422.28
+sd <- sd(data_sample$Total) ## 106.8766947411126
+mue0 <- mean(data$Total) ## 438.600192678227
 ```
 
 ## Step 3: Find T-Distribution
 ```
 t <- (mean-mue0)/(sd*(sqrt(n)))	
 ```
-# Result
+### Result
 ```
 -0.015270113580662
 ```
@@ -38,7 +42,7 @@ t <- (mean-mue0)/(sd*(sqrt(n)))
 ```
 pt <- pt(t,n-1)
 ```
-# Result
+### Result
 ```
 0.493923708495712
 ```
@@ -51,7 +55,7 @@ if(pt <= alpha){
   print('not reject H0')
 }
 ```
-# Result
+### Result
 ```
 Not reject H0
 ```
@@ -64,7 +68,7 @@ margin <- 1.96*seom
 upper <- mean+margin
 lower <- mean-margin
 ```
-# Result
+### Result
 ```
 Point estimate: 10.6876694741126
 Margin of error: 20.9478321692607
