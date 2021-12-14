@@ -21,6 +21,7 @@ Pokemon Stat นั้นเป็นการรวบรวมเอาค่�
 
 - R Language
 - R Studio Desktop
+- Microsoft Power BI
 
 ## Table of Contents
 
