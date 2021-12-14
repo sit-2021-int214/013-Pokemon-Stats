@@ -21,11 +21,11 @@ data_sample <- data %>% sample_n(100)
 
 ## Step 2: Find Point Estimation
 ```
-n <- 100
+n <- 100 
 alpha <- 0.05
-mean <- mean(data_sample$Total)
-sd <- sd(data_sample$Total)
-mue0 <- mean(data$Total)
+mean <- mean(data_sample$Total) ## 422.28
+sd <- sd(data_sample$Total) ## 106.8766947411126
+mue0 <- mean(data$Total) ## 438.600192678227
 ```
 
 ## Step 3: Find T-Distribution
