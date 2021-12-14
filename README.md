@@ -14,7 +14,8 @@ Pokemon Stat นั้นเป็นการรวบรวมเอาค่�
 1. Data Exploration
 2. Data Cleaning 
 3. Define & Answer a question
-4.
+4. Data Visualization
+5. Analytical Inferential Statistics
 
 ### Tools
 
@@ -24,7 +25,7 @@ Pokemon Stat นั้นเป็นการรวบรวมเอาค่�
 ## Table of Contents
 
 1. [Exploratory Data Analysis](./Exploratory_Data.md)
-2. [Data Visualization](./) เดี๋ยวไปทำลิงก์แชร์ bi ก่อน
+2. [Data Visualization](https://app.powerbi.com/view?r=eyJrIjoiY2I4Y2Q5ODUtYTZlNC00OTRjLThkNDQtYTMzNDY2YjIxZWQ0IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection) 
 3. [Analytical Inferential Statistics](./Analytical_Inferential_Stat.md)
 
 ## Resources
